@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30-Day Data Engineering Study Plan</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- =============================================
+       HEADER
+  ============================================= -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-badge">
+        <span class="badge-label">DATA ENG</span>
+        <span class="badge-num">30</span>
+      </div>
+      <div class="header-text">
+        <h1 class="site-title">30-Day Study Plan</h1>
+        <p class="site-subtitle">Data Engineering Bootcamp &mdash; Zero to Pipeline</p>
+      </div>
+      <button class="export-btn" id="exportBtn" aria-label="Export as PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Export PDF
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- =============================================
+         PROGRESS SECTION
+    ============================================= -->
+    <section class="progress-section" aria-label="Overall progress">
+      <div class="container">
+        <div class="progress-header">
+          <div class="progress-label">
+            <span class="progress-title">Progress</span>
+            <span class="progress-fraction" id="progressFraction">0 / 30 days complete</span>
+          </div>
+          <span class="progress-pct" id="progressPct" aria-live="polite">0%</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Study plan completion" id="progressTrack">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions" aria-label="Mark entire week complete">
+          <span class="quick-label">Quick Mark:</span>
+          <div class="quick-btns">
+            <button class="week-btn" data-week="1" aria-label="Mark Week 1 complete">Week 1</button>
+            <button class="week-btn" data-week="2" aria-label="Mark Week 2 complete">Week 2</button>
+            <button class="week-btn" data-week="3" aria-label="Mark Week 3 complete">Week 3</button>
+            <button class="week-btn" data-week="4" aria-label="Mark Week 4 complete">Week 4</button>
+            <button class="week-btn reset-btn" id="resetBtn" aria-label="Reset all progress">Reset All</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         WEEKLY MILESTONES
+    ============================================= -->
+    <section class="milestones-section" aria-label="Weekly milestones">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="section-title-prefix">// </span>Weekly Milestones
+        </h2>
+        <div class="milestones-grid">
+          <article class="milestone-card" aria-label="Week 1 milestone">
+            <div class="milestone-week">Week 1</div>
+            <h3 class="milestone-title">Foundation</h3>
+            <ul class="milestone-list">
+              <li>Linux basics</li>
+              <li>SQL queries</li>
+              <li>PostgreSQL database</li>
+            </ul>
+          </article>
+          <article class="milestone-card" aria-label="Week 2 milestone">
+            <div class="milestone-week">Week 2</div>
+            <h3 class="milestone-title">Pipelines</h3>
+            <ul class="milestone-list">
+              <li>Python ETL pipeline</li>
+              <li>Spark batch processing</li>
+              <li>Parquet storage</li>
+            </ul>
+          </article>
+          <article class="milestone-card" aria-label="Week 3 milestone">
+            <div class="milestone-week">Week 3</div>
+            <h3 class="milestone-title">Streaming</h3>
+            <ul class="milestone-list">
+              <li>Kafka ingestion</li>
+              <li>dbt transformations</li>
+              <li>Airflow orchestration</li>
+            </ul>
+          </article>
+          <article class="milestone-card" aria-label="Week 4 milestone">
+            <div class="milestone-week">Week 4</div>
+            <h3 class="milestone-title">Production</h3>
+            <ul class="milestone-list">
+              <li>Data quality checks</li>
+              <li>Feature store</li>
+              <li>Dashboard deployment</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         STUDY PLAN DAYS
+    ============================================= -->
+    <section class="plan-section" aria-label="30-day study plan">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="section-title-prefix">// </span>Daily Study Plan
+        </h2>
+
+        <!-- Week separators + day cards injected by script.js -->
+        <div class="plan-grid" id="planGrid"></div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         END-TO-END PROJECT SECTION
+    ============================================= -->
+    <section class="project-section" aria-label="End-to-end project">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="section-title-prefix">// </span>End-to-End Project
+        </h2>
+        <article class="project-card">
+          <h3 class="project-title">E-commerce Analytics Data Pipeline</h3>
+
+          <div class="pipeline-wrap">
+            <h4 class="pipeline-heading">Project Pipeline</h4>
+            <div class="pipeline" aria-label="Data pipeline stages">
+              <div class="pipeline-stage">Kafka / API</div>
+              <div class="pipeline-arrow" aria-hidden="true">→</div>
+              <div class="pipeline-stage">Airbyte</div>
+              <div class="pipeline-arrow" aria-hidden="true">→</div>
+              <div class="pipeline-stage">Spark</div>
+              <div class="pipeline-arrow" aria-hidden="true">→</div>
+              <div class="pipeline-stage">Warehouse</div>
+              <div class="pipeline-arrow" aria-hidden="true">→</div>
+              <div class="pipeline-stage">dbt</div>
+              <div class="pipeline-arrow" aria-hidden="true">→</div>
+              <div class="pipeline-stage">Airflow</div>
+              <div class="pipeline-arrow" aria-hidden="true">→</div>
+              <div class="pipeline-stage">Data Quality</div>
+              <div class="pipeline-arrow" aria-hidden="true">→</div>
+              <div class="pipeline-stage highlight">Dashboard</div>
+            </div>
+          </div>
+
+          <div class="deliverables-grid">
+            <div class="deliverable">
+              <span class="deliverable-week">Week 1</span>
+              <p>Set up local environment, load sample e-commerce CSV into PostgreSQL, write basic analytical queries.</p>
+            </div>
+            <div class="deliverable">
+              <span class="deliverable-week">Week 2</span>
+              <p>Build Python ETL script, convert data to Parquet, run Spark aggregations on order data.</p>
+            </div>
+            <div class="deliverable">
+              <span class="deliverable-week">Week 3</span>
+              <p>Stream order events via Kafka, load into warehouse, apply dbt staging + mart models, schedule with Airflow.</p>
+            </div>
+            <div class="deliverable">
+              <span class="deliverable-week">Week 4</span>
+              <p>Add Great Expectations checks, build feature table, deploy BI dashboard with automated refresh.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">30-Day Data Engineering Study Plan &mdash; Track your progress, build real pipelines.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
